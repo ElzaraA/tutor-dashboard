@@ -2,6 +2,9 @@
 
 // Импортируем наш компонент карточки
 import StatsCard from './components/StatsCard'
+import SubjectChart from './components/SubjectChart'
+import ProgressChart from './components/ProgressChart'
+
 
 function App() {
   return (
@@ -41,6 +44,22 @@ function App() {
           value="4.7" 
           change="+0.3 за семестр" 
         />
+
+      </div>
+      {/* 3. Графики (Сетка 2 колонки) */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl mx-auto mt-[10px]">
+        
+        {/* Блок с круговой диаграммой */}
+        <div className="bg-[#107A9C] p-6 rounded-xl border border-white/20 shadow-lg">
+          <h2 className="text-xl font-bold text-white mb-4">Распределение предметов</h2>
+          <SubjectChart />
+        </div>
+
+        {/* Блок с линейным графиком */}
+        <div className="bg-[#107A9C] p-6 rounded-xl border border-white/20 shadow-lg">
+          <h2 className="text-xl font-bold text-white mb-4">Прогресс по месяцам</h2>
+          <ProgressChart />
+        </div>
 
       </div>
     </div>
